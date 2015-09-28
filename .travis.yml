@@ -4,7 +4,7 @@ before_install:
   - sudo apt-get install -y libupnp-dev
 
 script:
-  - ./autogen.sh && ./configure && make && make test
+  - ./autogen.sh && ./configure && make
 
 compiler:
   - clang
