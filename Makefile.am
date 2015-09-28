@@ -19,7 +19,8 @@ u2pnpddocdir = ${prefix}/doc/u2pnpd
 u2pnpddoc_DATA = \
     README.md \
     AUTHORS \
-    NEWS
+    NEWS \
+    .travis.yml
 
 EXTRA_DIST = $(u2pnpddoc_DATA)
 
