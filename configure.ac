@@ -3,6 +3,7 @@ AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign no-dist-gzip dist-bzip2])
 AM_SILENT_RULES([yes])
 AC_PROG_CC
+AC_GNU_SOURCE
 
 PKG_CHECK_MODULES(LIBUPNP, libupnp)
 
