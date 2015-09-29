@@ -141,7 +141,7 @@ struct device_desc *device_desc_new(config_options_t *options)
 		generate_uuid(&d->uuid);
 
 	if (options->serialNumber) {
-		quote_xml_special(&d->uuid, options->serialNumber);
+		quote_xml_special(&d->serialNumber, options->serialNumber);
 	} else {
 		deviceinfo_from_cpuinfo(&s, "Serial");
 		if (s) {
