@@ -12,6 +12,7 @@ typedef struct {
 	char *serialNumber;
 	char *uuid;
 	char *presentationURL;
+	char *interface;
 	int use_https;
 } config_options_t;
 

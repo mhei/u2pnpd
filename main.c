@@ -318,7 +318,13 @@ int main(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
 
+#ifdef UPNP_ENABLE_IPV6
+	rv = UpnpInit2(options->interface, 0);
+#else
+	if (options->interface)
+		fprintf(stderr, "Warning: ignoring interface argument, not supported by libupnp.\n");
 	rv = UpnpInit(NULL, 0);
+#endif
 	if (rv != UPNP_E_SUCCESS) {
 		fprintf(stderr, "UpnpInit failed: %d\n", rv);
 		return EXIT_FAILURE;

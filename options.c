@@ -2,8 +2,6 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
-#define SYSLOG_NAMES
-#include <syslog.h>
 #include <getopt.h>
 
 #include "options.h"
@@ -44,6 +42,7 @@ const struct option long_options[] = {
 	{ "serialNumber",       required_argument,      0,      'S' },
 	{ "uuid",               required_argument,      0,      'u' },
 	{ "httpsURL",           no_argument,            0,      's' },
+	{ "interface",          required_argument,      0,      'i' },
 
 	{ "version",            no_argument,            0,      'V' },
 	{ "help",               no_argument,            0,      'h' },
@@ -62,6 +61,7 @@ const char *long_options_descs[] = {
 	"manufacturer's serial number",
 	"UUID of this device",
 	"generate a HTTPS URL for the presentation URL (HTTP is used by default)",
+	"network interface to use",
 
 	"print version and exit",
 	"print this usage and exit",
@@ -95,7 +95,7 @@ int options_parse_cli(int argc, char *argv[], config_options_t *options)
 	int rc = EXIT_FAILURE;
 
 	while (1) {
-		int c = getopt_long(argc, argv, "f:M:m:D:P:N:p:S:u:sVh", long_options, NULL);
+		int c = getopt_long(argc, argv, "f:M:m:D:P:N:p:S:u:si:Vh", long_options, NULL);
 
 		/* detect the end of the options */
 		if (c == -1) break;
@@ -111,6 +111,7 @@ int options_parse_cli(int argc, char *argv[], config_options_t *options)
 			case 'S': options->serialNumber = optarg; break;
 			case 'u': options->uuid = optarg; break;
 			case 's': options->use_https = 1; break;
+			case 'i': options->interface = optarg; break;
 
 			case 'V':
 				printf("%s (%s)\n", argv[0], PACKAGE_STRING);
