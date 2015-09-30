@@ -6,14 +6,12 @@
 
 #include <stdio.h>
 #include <errno.h>
-#include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
 
 #define FN_DEVICE_INFO "/etc/device_info"
 #define FN_CPUINFO "/proc/cpuinfo"
-#define FN_UUID "/proc/sys/kernel/random/uuid"
 #define FN_SYSINFO_PREFIX "/tmp/sysinfo"
 
 #define FWPRINTENV "fw_printenv -s"
