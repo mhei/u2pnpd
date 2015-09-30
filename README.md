@@ -11,6 +11,17 @@ user would need to check with his/her router to obtain the actual device's IP ad
 
 This daemon is designed to run on OpenWrt, so it has some specifics built-in.
 However, all defaults detected this way can be overriden by command line arguments.
+These argument's names match the corresponding XML tags in the UPnP spec, so it
+should be easy to understand their meaning. If you don't specify one, the tag is
+omitted in the device descriptor.
+A special note to the uuid: the uuid should be the same between various invocations.
+This way a UPnP client can detect changes of e.g. the device's IP address and
+discard stale (cached) data. So it's best to create a uuid once, and then pass this
+to u²pnpd via parameter. When this parameter is not passed, then a random uuid is
+obtained from the kernel (/proc/sys/kernel/random/uuid).
+
+Yes, this isn't really a daemon (yet) - use something like start-stop-daemon to bring
+this into background. Or in other words: this is left as an exercise to the reader :-)
 
 u²pnpd is release under GPL v2-only.
 
@@ -25,6 +36,29 @@ Installation
 ------------
 
 The shell commands are ``./autogen.sh; ./configure; make; make install``.
+
+
+Usage
+-----
+
+./u2pnpd (u2pnpd 0.1) -- tool to announce this device via UPnP on the network
+
+Usage: ./u2pnpd [<options>]
+
+Options:
+        -f, --friendlyName      a short user-friendly title (default: [manufacturer] [modelName])
+        -M, --manufacturer      manufacturer name
+        -m, --manufacturerURL   URL to manufacturer site
+        -D, --modelDescription  long user-friendly title
+        -P, --modelName         model name
+        -N, --modelNumber       model number
+        -p, --modelURL          URL to manufacturer's product pages
+        -S, --serialNumber      manufacturer's serial number
+        -u, --uuid              UUID of this device
+        -s, --httpsURL          generate a HTTPS URL for the presentation URL (HTTP is used by default)
+        -i, --interface         network interface to use
+        -V, --version           print version and exit
+        -h, --help              print this usage and exit
 
 
 Report a Bug
