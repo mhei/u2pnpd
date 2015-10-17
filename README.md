@@ -1,6 +1,8 @@
 u²pnpd
 ======
 
+[![Build Status](https://travis-ci.org/mhei/u2pnpd.svg?branch=master)](https://travis-ci.org/mhei/u2pnpd)
+
 u²pnpd (or u2pnpd) is a micro UPnP tool with the only purpose to announce the device
 on the network via UPnP. So it becomes visible on Windows(TM) workstations and the user
 can easily double-click on the device's icon to open the device's web frontend in the
@@ -41,6 +43,7 @@ The shell commands are ``./autogen.sh; ./configure; make; make install``.
 Usage
 -----
 
+```
 ./u2pnpd (u2pnpd 0.1) -- tool to announce this device via UPnP on the network
 
 Usage: ./u2pnpd [<options>]
@@ -59,6 +62,7 @@ Options:
         -i, --interface         network interface to use
         -V, --version           print version and exit
         -h, --help              print this usage and exit
+```
 
 
 Report a Bug
