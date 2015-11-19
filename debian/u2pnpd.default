@@ -1,0 +1,23 @@
+# Defaults for u2pnpd initscript
+# sourced by /etc/init.d/u2pnpd
+# installed at /etc/default/u2pnpd by the maintainer scripts
+
+#
+# This is a POSIX shell fragment
+#
+
+# Define a custom friendlyName
+#FRIEDLYNAME="mySmartDevice"
+
+# Uncomment the following line when a HTTPS URL should be
+# announced for this device
+#HTTPSURL=1
+
+# UPnP uses UUIDs to distinguish different devices, this UUID
+# should be generated the first time when u2pnpd starts and
+# is saved in the following file. Usually, you can leave
+# this setting alone.
+UUIDFILE="/etc/u2pnpd.uuid"
+
+# Additional options that are passed to the Daemon.
+DAEMON_OPTS=""
