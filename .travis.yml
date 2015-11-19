@@ -11,7 +11,7 @@ compiler:
   - gcc
 
 deploy:
-  provider: pacakgecloud
+  provider: packagecloud
   username: mhei
   repository: u2pnpd
   token:
