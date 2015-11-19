@@ -9,3 +9,11 @@ script:
 compiler:
   - clang
   - gcc
+
+deploy:
+  provider: pacakgecloud
+  username: mhei
+  repository: u2pnpd
+  token:
+    secure: z8HcXfJ+RZjlWRJsTkZZZ+rp8bfQdZeEjuDBvbabcQyPsaPGcy3y6FwWNty/YMjDk0IbhSfaR7ej9FTS5Ci5U47OA3LQnSPP3WdmkzpEOsM3GlAQQIcIB5fMKf3R2a8uiwBueuCP8oNA0u7Mm0liNbySBwpmCzO5qXWnz6cFxOSMNWN5Uwt+eUojE6ZgkX53OlwOKSt/ZhQPvhJ/z5pBNiuTD/s3L48HQDNRYleHoO3Xxf+GBSb9EO8G2ztzIOUAhTyxvQG2V3X8ESzkzqPrwIpvrz6CVjWUYmR7N83ydFpkls6sj+cp2rl5s2lMmMwwtcOxFmfH9tXXpVdl/LWM2O8aGPY9OeZJybn0648wzd0eLNjaOSKk1Pz1lNmy9Wu64rCHeicGsm/G+PCi/m+BHVSW72aIGICD8I8431S1F2X0jIvX6Ze6ruEmMJmUmiYaYN3Qobxmq8S8TTV8Mohm9j63r5NcxbCiHsLc93ue4vzAjmANBgpJvgpQr1zkmCoHE7WzDZQEQZcjmshHNt4iqbEz9GSCwPkNFE/4gBmnUTKG5ggTQF/AnhKzmHoYWrySQzh12L0zce4Ajr/rjUKNlH/KS5J9aiFcoPd4QZ/cyhLEhalXAIyDRFhtPJtyWiBOAHMhbMS5QealeFY1i8f6CwPwbMoXNZX3t7loz4ROKq0=
+  dist: ubuntu/precise
