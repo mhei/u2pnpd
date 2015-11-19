@@ -18,7 +18,7 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="u2pnpd"
 NAME=u2pnpd
-DAEMON=/usr/sbin/u2pnpd
+DAEMON=/usr/bin/u2pnpd
 DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
