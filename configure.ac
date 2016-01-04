@@ -1,4 +1,4 @@
-AC_INIT(u2pnpd, 0.1)
+AC_INIT(u2pnpd, 0.2)
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([foreign no-dist-gzip dist-bzip2])
 AM_SILENT_RULES([yes])
