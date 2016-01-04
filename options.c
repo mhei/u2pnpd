@@ -104,10 +104,10 @@ int options_parse_cli(int argc, char *argv[], config_options_t *options)
 			case 'f': options->friendlyName = optarg; break;
 			case 'M': options->manufacturer = optarg; break;
 			case 'm': options->manufacturerURL = optarg; break;
-			case 'd': options->modelDescription = optarg; break;
-			case 'p': options->modelName = optarg; break;
-			case 'n': options->modelNumber = optarg; break;
-			case 'P': options->modelURL = optarg; break;
+			case 'D': options->modelDescription = optarg; break;
+			case 'P': options->modelName = optarg; break;
+			case 'N': options->modelNumber = optarg; break;
+			case 'p': options->modelURL = optarg; break;
 			case 'S': options->serialNumber = optarg; break;
 			case 'u': options->uuid = optarg; break;
 			case 's': options->use_https = 1; break;
