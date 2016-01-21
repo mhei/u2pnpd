@@ -2,7 +2,7 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: u2pnpd
 Source: https://github.com/mhei/u2pnpd
 
-Files: debian/*
+Files: *
 Copyright: 2015 Michael Heimpold <mhei@heimpold.de>
 License: GPL-2.0+
 
