@@ -22,7 +22,7 @@ u2pnpddoc_DATA = \
     NEWS \
     .travis.yml
 
-EXTRA_DIST = $(u2pnpddoc_DATA)
+EXTRA_DIST = $(u2pnpddoc_DATA) debian autogen.sh autogen-clean.sh
 
 # Remove doc directory on uninstall
 uninstall-local:
