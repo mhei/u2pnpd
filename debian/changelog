@@ -1,3 +1,9 @@
+u2pnpd (0.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Michael Heimpold <mhei@heimpold.de>  Thu, 21 Jan 2016 19:46:45 +0000
+
 u2pnpd (0.1-1) unstable; urgency=low
 
   * Initial release
