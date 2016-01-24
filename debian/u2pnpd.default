@@ -9,6 +9,9 @@
 # Define a custom friendlyName
 #FRIEDLYNAME="mySmartDevice"
 
+# Define a custom serial number
+#SERIALNUMBER="4711"
+
 # Uncomment the following line when a HTTPS URL should be
 # announced for this device
 #HTTPSURL=1

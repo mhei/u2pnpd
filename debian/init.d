@@ -62,7 +62,7 @@ do_start()
 		|| return 1
 	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --background -- \
 		${HTTPSURL:+-s} ${FRIENDLYNAME:+-f "$FRIENDLYNAME"} ${UUID:+-u "$UUID"} \
-		$DAEMON_ARGS \
+		${SERIALNUMBER:+-S "$SERIALNUMBER"} $DAEMON_ARGS \
 		|| return 2
 }
 
