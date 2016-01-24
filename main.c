@@ -194,14 +194,21 @@ struct device_desc *device_desc_new(config_options_t *options)
 	if (options->friendlyName) {
 		quote_xml_special(&d->friendlyName, options->friendlyName);
 	} else {
-		if (d->manufacturer && d->manufacturer[0] &&
-		    d->modelName && d->modelName[0]) {
+		deviceinfo_from_deviceinfo(&s, "DEVICE_FRIENDLYNAME");
+		if (s) {
+			quote_xml_special(&d->friendlyName, s);
+			free(s);
+			s = NULL;
+		} else {
+			if (d->manufacturer && d->manufacturer[0] &&
+			    d->modelName && d->modelName[0]) {
 
-			asprintf(&s, "%s %s", d->manufacturer, d->modelName);
-			if (s) {
-				quote_xml_special(&d->friendlyName, s);
-				free(s);
-				s = NULL;
+				asprintf(&s, "%s %s", d->manufacturer, d->modelName);
+				if (s) {
+					quote_xml_special(&d->friendlyName, s);
+					free(s);
+					s = NULL;
+				}
 			}
 		}
 	}
