@@ -1,5 +1,5 @@
 /*
- * Copyright © 2015 Michael Heimpold <mhei@heimpold.de>
+ * Copyright © 2015-2016 Michael Heimpold <mhei@heimpold.de>
  *
  * SPDX-License-Identifier: GPL-2.0
  */
@@ -268,7 +268,7 @@ char *generate_device_desc(config_options_t *options)
 	    "<root xmlns=\"urn:schemas-upnp-org:device-1-0\">"
 	         "<specVersion><major>1</major><minor>0</minor></specVersion>"
 	         "<device>"
-	             "<deviceType>upnp:rootdevice</deviceType>"
+	             "<deviceType>urn:schemas-upnp-org:device:Basic:1</deviceType>"
 	             "<UDN>uuid:%s</UDN>"
 	             "%s%s%s"
 	             "%s%s%s"
