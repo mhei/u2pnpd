@@ -15,7 +15,7 @@ u2pnpd_CFLAGS = \
 u2pnpd_LDADD = \
     $(LIBUPNP_LIBS)
 
-u2pnpddocdir = ${prefix}/doc/u2pnpd
+u2pnpddocdir = ${prefix}/share/doc/u2pnpd
 u2pnpddoc_DATA = \
     README.md \
     AUTHORS \
