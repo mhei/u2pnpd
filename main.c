@@ -1,9 +1,10 @@
 /*
- * Copyright © 2015-2016 Michael Heimpold <mhei@heimpold.de>
+ * Copyright © 2015-2017 Michael Heimpold <mhei@heimpold.de>
  *
  * SPDX-License-Identifier: GPL-2.0
  */
 
+#include "config.h"
 #include <stdio.h>
 #include <errno.h>
 #include <signal.h>
@@ -203,8 +204,7 @@ struct device_desc *device_desc_new(config_options_t *options)
 			if (d->manufacturer && d->manufacturer[0] &&
 			    d->modelName && d->modelName[0]) {
 
-				asprintf(&s, "%s %s", d->manufacturer, d->modelName);
-				if (s) {
+				if (asprintf(&s, "%s %s", d->manufacturer, d->modelName) != -1) {
 					quote_xml_special(&d->friendlyName, s);
 					free(s);
 					s = NULL;
@@ -216,8 +216,11 @@ struct device_desc *device_desc_new(config_options_t *options)
 	if (options->presentationURL) {
 		quote_xml_special(&d->presentationURL, options->presentationURL);
 	} else {
-		asprintf(&d->presentationURL, "http%s://%s/", options->use_https ? "s" : "",
-		         UpnpGetServerIpAddress());
+		if (asprintf(&d->presentationURL, "http%s://%s/", options->use_https ? "s" : "",
+		             UpnpGetServerIpAddress()) == -1) {
+			/* this should usually not happen */
+			d->presentationURL = NULL;
+		}
 	}
 
 	return d;
@@ -256,6 +259,7 @@ char *generate_device_desc(config_options_t *options)
 {
 	struct device_desc *d;
 	char *device_desc = NULL;
+	int c;
 
 	d = device_desc_new(options);
 	if (!d)
@@ -263,7 +267,7 @@ char *generate_device_desc(config_options_t *options)
 
 #define CONDITIONAL_PARAM(x) (d->x) ? "<" #x ">" : "", (d->x) ? : "", (d->x) ? "</" #x ">" : ""
 
-	asprintf(&device_desc,
+	c = asprintf(&device_desc,
 	    "<?xml version=\"1.0\"?>"
 	    "<root xmlns=\"urn:schemas-upnp-org:device-1-0\">"
 	         "<specVersion><major>1</major><minor>0</minor></specVersion>"
@@ -294,7 +298,7 @@ char *generate_device_desc(config_options_t *options)
 
 	free(d);
 
-	return device_desc;
+	return (c != -1) ? device_desc : NULL;
 }
 
 int main(int argc, char *argv[])
