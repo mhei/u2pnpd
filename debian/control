@@ -3,12 +3,12 @@ Section: utils
 Priority: optional
 Maintainer: Michael Heimpold <mhei@heimpold.de>
 Build-Depends: debhelper (>= 9), autotools-dev
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Homepage: https://github.com/mhei/u2pnpd
 
 Package: u2pnpd
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, lsb-base (>= 3.2-14)
 Description: Micro UPnP tool to announce a device on the network
  u²pnpd is a tiny tool, intended to run as daemon, which announces
  a device on the network using UPnP. The main purpose is, when
