@@ -13,7 +13,7 @@
 u2pnpd
 
 # Sources
-*.tar.bz2
+*.tar.*
 
 # Editor stuff
 *~
