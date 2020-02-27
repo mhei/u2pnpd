@@ -11,4 +11,4 @@ int deviceinfo_from_cpuinfo(char **dest, const char *key);
 int deviceinfo_from_deviceinfo(char **dest, const char *key);
 int deviceinfo_from_sysinfo(char **dest, const char *key);
 
-#endif /* DEVICE_MANUFACTURER */
+#endif /* DEVICE_INFO_H */
