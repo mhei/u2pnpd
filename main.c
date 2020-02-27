@@ -308,8 +308,6 @@ int main(int argc, char *argv[])
 	int rv = EXIT_FAILURE;
 	struct sigaction sa;
 
-	shutdown_flag = 0;
-
 	/* init options, preset some defaults and parse command line arguments */
 	options = options_init();
 	options_parse_cli(argc, argv, options);
