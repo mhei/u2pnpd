@@ -45,7 +45,7 @@ void signal_handler(int signum)
 	return;
 }
 
-int upnp_callback(Upnp_EventType eventtype, void *event, void *cookie)
+int upnp_callback(Upnp_EventType eventtype, const void *event, void *cookie)
 {
 	return UPNP_E_SUCCESS;
 }
