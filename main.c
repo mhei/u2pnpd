@@ -265,7 +265,7 @@ char *generate_device_desc(config_options_t *options)
 	if (!d)
 		return NULL;
 
-#define CONDITIONAL_PARAM(x) (d->x) ? "<" #x ">" : "", (d->x) ? : "", (d->x) ? "</" #x ">" : ""
+#define CONDITIONAL_PARAM(x) (d->x) ? "<" #x ">" : "", (d->x) ? (d->x) : "", (d->x) ? "</" #x ">" : ""
 
 	c = asprintf(&device_desc,
 	    "<?xml version=\"1.0\"?>"
