@@ -303,7 +303,6 @@ char *generate_device_desc(config_options_t *options)
 
 int main(int argc, char *argv[])
 {
-	UpnpDevice_Handle upnp_handle;
 	UpnpDevice_Handle upnp_device;
 	char *device_desc = NULL;
 	int rv = EXIT_FAILURE;
