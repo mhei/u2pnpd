@@ -1,7 +1,7 @@
+// SPDX-License-Identifier: GPL-2.0-only
 /*
  * Copyright © 2015 Michael Heimpold <mhei@heimpold.de>
  *
- * SPDX-License-Identifier: GPL-2.0
  */
 
 #include "config.h"

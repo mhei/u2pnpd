@@ -1,3 +1,9 @@
+/* SPDX-License-Identifier: GPL-2.0-only */
+/*
+ * Copyright © 2015 Michael Heimpold <mhei@heimpold.de>
+ *
+ */
+
 #ifndef OPTIONS_H
 #define OPTIONS_H
 
