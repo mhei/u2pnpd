@@ -13,9 +13,6 @@
 #include "options.h"
 #include "config.h"
 
-extern char *optarg;
-extern int optind;
-
 config_options_t *options = NULL;
 
 config_options_t *options_init(void)
