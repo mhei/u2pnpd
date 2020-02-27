@@ -375,7 +375,6 @@ free_out:
 		free(device_desc);
 upnp_finish:
 	UpnpFinish();
-err_out:
 	options_free(options);
 	return rv;
 }
