@@ -49,7 +49,7 @@ const struct option long_options[] = {
 
 	{ "version",            no_argument,            0,      'V' },
 	{ "help",               no_argument,            0,      'h' },
-	{} /* stop condition for iterator */
+	{0} /* stop condition for iterator */
 };
 
 /* descriptions for the command line options */
