@@ -1,4 +1,4 @@
-AM_CFLAGS = -Wall -g
+AM_CFLAGS = -Wall -pedantic -g
 
 bin_PROGRAMS = u2pnpd
 
@@ -10,7 +10,8 @@ u2pnpd_SOURCES = \
     options.h
 
 u2pnpd_CFLAGS = \
-    $(LIBUPNP_CFLAGS)
+    $(LIBUPNP_CFLAGS) \
+    $(AM_CFLAGS)
 
 u2pnpd_LDADD = \
     $(LIBUPNP_LIBS)
