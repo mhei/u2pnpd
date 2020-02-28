@@ -20,8 +20,7 @@ u2pnpddocdir = ${prefix}/share/doc/u2pnpd
 u2pnpddoc_DATA = \
     README.md \
     AUTHORS \
-    NEWS \
-    .travis.yml
+    NEWS
 
 EXTRA_DIST = $(u2pnpddoc_DATA) debian autogen.sh autogen-clean.sh
 
