@@ -4,6 +4,7 @@ AM_INIT_AUTOMAKE([foreign no-dist-gzip dist-xz])
 AM_SILENT_RULES([yes])
 AC_PROG_CC
 AC_GNU_SOURCE
+AC_SYS_LARGEFILE
 
 PKG_CHECK_MODULES(LIBUPNP, libupnp)
 
