@@ -16,16 +16,16 @@ However, all defaults detected this way can be overriden by command line argumen
 These argument's names match the corresponding XML tags in the UPnP spec, so it
 should be easy to understand their meaning. If you don't specify one, the tag is
 omitted in the device descriptor.
-A special note to the uuid: the uuid should be the same between various invocations.
+A special note to the UUID: the UUID should be the same between various invocations.
 This way a UPnP client can detect changes of e.g. the device's IP address and
-discard stale (cached) data. So it's best to create a uuid once, and then pass this
-to u²pnpd via parameter. When this parameter is not passed, then a random uuid is
+discard stale (cached) data. So it's best to create a UUID once, and then pass this
+to u²pnpd via parameter. When this parameter is not passed, then a random UUID is
 obtained from the kernel (/proc/sys/kernel/random/uuid).
 
 Yes, this isn't really a daemon (yet) - use something like start-stop-daemon to bring
 this into background. Or in other words: this is left as an exercise to the reader :-)
 
-u²pnpd is release under GPL v2-only.
+u²pnpd is released under GPL v2-only.
 
 
 Reference
@@ -44,7 +44,7 @@ Usage
 -----
 
 ```
-./u2pnpd (u2pnpd 0.1) -- tool to announce this device via UPnP on the network
+./u2pnpd (u2pnpd 0.5) -- tool to announce this device via UPnP on the network
 
 Usage: ./u2pnpd [<options>]
 
