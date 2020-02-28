@@ -1,3 +1,9 @@
+u2pnpd (0.5) unstable; urgency=low
+
+  * New upstream release
+
+ -- Michael Heimpold <mhei@heimpold.de>  Fri, 28 Feb 2020 21:59:00 +0200
+
 u2pnpd (0.4-1) unstable; urgency=low
 
   * New upstream release

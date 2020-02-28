@@ -7,7 +7,7 @@
 #
 
 # Define a custom friendlyName
-#FRIEDLYNAME="mySmartDevice"
+#FRIENDLYNAME="mySmartDevice"
 
 # Define a custom serial number
 #SERIALNUMBER="4711"
@@ -22,5 +22,5 @@
 # this setting alone.
 UUIDFILE="/etc/u2pnpd.uuid"
 
-# Additional options that are passed to the Daemon.
+# Additional options that are passed to the daemon
 DAEMON_OPTS=""
