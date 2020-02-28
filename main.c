@@ -46,7 +46,11 @@ void signal_handler(int signum)
 	return;
 }
 
+#if UPNP_VERSION >= ((1 * 100 + 8) * 100 + 0)
+int upnp_callback(Upnp_EventType eventtype, const void *event, void *cookie)
+#else
 int upnp_callback(Upnp_EventType eventtype, void *event, void *cookie)
+#endif
 {
 	return UPNP_E_SUCCESS;
 }
