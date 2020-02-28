@@ -4,6 +4,9 @@
  *
  */
 
+#ifdef HAVE_CONFIG_H
+#include "config.h"
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -11,7 +14,6 @@
 #include <getopt.h>
 
 #include "options.h"
-#include "config.h"
 
 config_options_t *options = NULL;
 
