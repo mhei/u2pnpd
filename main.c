@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <upnp.h>
+#include <upnptools.h>
 
 #include "options.h"
 #include "device_info.h"
@@ -329,13 +330,13 @@ int main(int argc, char *argv[])
 	rv = UpnpInit(NULL, 0);
 #endif
 	if (rv != UPNP_E_SUCCESS) {
-		fprintf(stderr, "UpnpInit failed: %d\n", rv);
+		fprintf(stderr, "UpnpInit failed: %s\n", UpnpGetErrorMessage(rv));
 		return EXIT_FAILURE;
 	}
 
 	rv = UpnpEnableWebserver(1);
 	if (rv != UPNP_E_SUCCESS) {
-		fprintf(stderr, "Could not enabled UPnP's internal HTTP server.\n");
+		fprintf(stderr, "Could not enabled UPnP's internal HTTP server: %s\n", UpnpGetErrorMessage(rv));
 		goto upnp_finish;
 	}
 
@@ -348,13 +349,13 @@ int main(int argc, char *argv[])
 	rv = UpnpRegisterRootDevice2(UPNPREG_BUF_DESC, device_desc, strlen(device_desc), 1,
 	                             upnp_callback, &upnp_device, &upnp_device);
 	if (rv != UPNP_E_SUCCESS) {
-		fprintf(stderr, "Failed to register UPnP root device.\n");
+		fprintf(stderr, "Failed to register UPnP root device: %s\n", UpnpGetErrorMessage(rv));
 		goto free_out;
 	}
 
 	rv = UpnpSendAdvertisement(upnp_device, UPNP_ALIVE_INTERVAL);
 	if (rv != UPNP_E_SUCCESS) {
-		fprintf(stderr, "Failed to announce UPnP device.\n");
+		fprintf(stderr, "Failed to announce UPnP device: %s\n", UpnpGetErrorMessage(rv));
 		goto upnp_unregister;
 	}
 
