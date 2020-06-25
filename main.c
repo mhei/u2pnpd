@@ -322,6 +322,7 @@ int main(int argc, char *argv[])
 		return EXIT_FAILURE;
 	}
 
+repeat_upnpinit:
 #ifdef UPNP_ENABLE_IPV6
 	rv = UpnpInit2(options->interface, 0);
 #else
@@ -329,6 +330,13 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Warning: ignoring interface argument, not supported by libupnp.\n");
 	rv = UpnpInit(NULL, 0);
 #endif
+	/* if we bind to a dedicated interface, wait until it has acquired an IP address */
+	if (options->interface && rv == UPNP_E_INVALID_INTERFACE && !shutdown_flag) {
+		sleep(5);
+		/* re-check shutdown flag after (maybe interrupted) sleep */
+		if (!shutdown_flag)
+			goto repeat_upnpinit;
+	}
 	if (rv != UPNP_E_SUCCESS) {
 		fprintf(stderr, "UpnpInit failed: %s\n", UpnpGetErrorMessage(rv));
 		return EXIT_FAILURE;
