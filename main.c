@@ -236,26 +236,16 @@ void device_desc_free(struct device_desc *d)
 	if (!d)
 		return;
 
-	if (d->friendlyName)
-		free(d->friendlyName);
-	if (d->manufacturer)
-		free(d->manufacturer);
-	if (d->manufacturerURL)
-		free(d->manufacturerURL);
-	if (d->modelDescription)
-		free(d->modelDescription);
-	if (d->modelName)
-		free(d->modelName);
-	if (d->modelNumber)
-		free(d->modelNumber);
-	if (d->modelURL)
-		free(d->modelURL);
-	if (d->serialNumber)
-		free(d->serialNumber);
-	if (d->uuid)
-		free(d->uuid);
-	if (d->presentationURL)
-		free(d->presentationURL);
+	free(d->friendlyName);
+	free(d->manufacturer);
+	free(d->manufacturerURL);
+	free(d->modelDescription);
+	free(d->modelName);
+	free(d->modelNumber);
+	free(d->modelURL);
+	free(d->serialNumber);
+	free(d->uuid);
+	free(d->presentationURL);
 
 	free(d);
 }

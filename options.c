@@ -31,8 +31,7 @@ config_options_t *options_init(void)
 
 void options_free(config_options_t *options)
 {
-	if (options)
-		free(options);
+	free(options);
 }
 
 /* command line options */
