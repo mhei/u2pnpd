@@ -366,8 +366,7 @@ int main(int argc, char *argv[])
 upnp_unregister:
 	UpnpUnRegisterRootDevice(upnp_device);
 free_out:
-	if (device_desc)
-		free(device_desc);
+	free(device_desc);
 upnp_finish:
 	UpnpFinish();
 	options_free(options);
